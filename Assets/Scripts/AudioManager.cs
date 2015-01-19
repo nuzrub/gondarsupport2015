@@ -13,7 +13,9 @@ public class AudioManager : MonoBehaviour {
 
     public GameObject AudioSourcePrefab;
     public AudioClip[] clips;
+
     private Hashtable nameClipHash;
+    private bool BGM_Paused;
 
 
     void Awake() {
@@ -26,6 +28,8 @@ public class AudioManager : MonoBehaviour {
         foreach (AudioClip clip in clips) {
             nameClipHash.Add(clip.name, clip);
         }
+
+        BGM_Paused = false;
     }
 
 
@@ -41,7 +45,7 @@ public class AudioManager : MonoBehaviour {
         Instance._PlayBGM(name);
     }
     public static void PauseBGM() {
-        Instance.audio.Pause();
+        Instance._PauseBGM();
     }
     public static void StopBGM() {
         Instance.audio.Stop();
@@ -69,6 +73,14 @@ public class AudioManager : MonoBehaviour {
 
         audio.Play();
     }
+    public void _PauseBGM() {
+        if (BGM_Paused) {
+            audio.Play();
+        } else {
+            audio.Pause();
+        }
+        BGM_Paused = !BGM_Paused;
+    }
     private void _SetBGMVolume(float volume) {
         BGM_Volume = volume;
 
@@ -83,7 +95,7 @@ public class AudioManager : MonoBehaviour {
 
     #region SFX
 
-    public static void PlaySFX(string name, Vector3 position, float volume = 1f, float pitch = 1f, float delay = 1f, float volume_variation = 0f, float pitch_variation = 0f) {
+    public static void PlaySFX(string name, Vector3 position, float volume = 1f, float pitch = 1f, float delay = 0f, float volume_variation = 0f, float pitch_variation = 0f) {
         Instance._PlaySFX(name, position, volume, pitch, delay, volume_variation, pitch_variation);
     }
 
