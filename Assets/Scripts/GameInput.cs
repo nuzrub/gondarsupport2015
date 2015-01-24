@@ -40,5 +40,6 @@ public class GameInput : MonoBehaviour {
 
 		print ("Mdir: " + mdir);
 		print ("Sdir: " + sdir);
+		print ("mousePos: " + mousePos);
 	}
 }
