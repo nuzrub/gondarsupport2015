@@ -13,7 +13,7 @@ public class CorpoMonstro : MonoBehaviour {
     public float HP_Max;
     public float HP_Current;
 
-	void criarMonstro(Transform cabeca, Transform bracoEsquerdo, Transform bracoDireito, Transform costa, Transform pernas){
+	public void criarMonstro(Transform cabeca, Transform bracoEsquerdo, Transform bracoDireito, Transform costa, Transform pernas){
 		cabeca.parent = slotCabeca;
 		cabeca.localPosition = Vector3.zero;
 
