@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CorpoMonstro : MonoBehaviour {
+public class CorpoMonstro : BaseComponent {
 	
 	public Transform slotCabeca;
 	public Transform slotBracoEsquerdo;
@@ -9,7 +9,6 @@ public class CorpoMonstro : MonoBehaviour {
 	public Transform slotCosta;
 	public Transform slotPernas;
 
-   
     public float HP_Max;
     public float HP_Current;
     public float attack;
@@ -33,14 +32,29 @@ public class CorpoMonstro : MonoBehaviour {
         pernas.transform.parent = slotPernas;
         pernas.transform.localPosition = Vector3.zero;
 
-        cabeca.Install(this);
-        costa.Install(this);
-        bracoDireito.Install(this);
-        bracoEsquerdo.Install(this);
-        pernas.Install(this);
 
-
+        BaseComponent[] bclist = new BaseComponent[6];
+        bclist[0] = cabeca;
+        bclist[1] = costa;
+        bclist[2] = pernas;
+        bclist[3] = bracoDireito;
+        bclist[4] = bracoEsquerdo;
+        bclist[5] = this;
+        for (int i = 0; i < 5; i++) {
+            bclist[i].corpo = this;
+            bclist[i].costa = costa;
+            bclist[i].perna = pernas;
+            bclist[i].braco1 = bracoDireito;
+            bclist[i].braco2 = bracoEsquerdo;
+        }
 	}
+
+    protected override void OnUpdate() {
+        base.OnUpdate();
+
+        perna.Andar();
+        cabeca.Atacar();
+    }
 
     void FixedUpdate() {
         rigidbody.velocity = Vector3.zero;

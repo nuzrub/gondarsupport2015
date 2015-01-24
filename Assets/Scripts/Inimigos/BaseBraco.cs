@@ -3,14 +3,8 @@ using System.Collections;
 
 public class BaseBraco : BaseComponent {
 
-    public override void Install(CorpoMonstro cm) {
-        base.Install(cm);
-        if (braco1 == null) {
-            braco1 = this;
-        } else {
-            braco2 = this;
-        }
-    }
+    public float cooldown = 0.6f;
+    private float nextShoot = 0f;
 
     public virtual void Atirar() {
 

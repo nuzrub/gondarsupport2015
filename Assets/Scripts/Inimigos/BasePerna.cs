@@ -3,10 +3,7 @@ using System.Collections;
 
 public class BasePerna : BaseComponent {
     public float distanciaDesejada = 6f;
-    public override void Install(CorpoMonstro cm) {
-        base.Install(cm);
-        perna = this;
-    }
+
 
     public virtual void Andar() {
         corpo.transform.LookAt(player);
