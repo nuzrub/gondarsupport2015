@@ -58,7 +58,5 @@ public class GameInput : MonoBehaviour {
 
 		mdir.Normalize ();
 		sdir.Normalize ();
-
-		print ("Sdir: " + sdir);
 	}
 }
