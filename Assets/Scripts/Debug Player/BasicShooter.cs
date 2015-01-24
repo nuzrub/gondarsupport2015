@@ -14,7 +14,7 @@ public class BasicShooter : MonoBehaviour {
 			if (Time.time > nextShoot) {
 				nextShoot = Time.time + cooldown;
 
-				BasicBullet bullet = (BasicBullet)GameObject.Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+				BasicBullet bullet = (BasicBullet)GameObject.Instantiate(bulletPrefab, transform.position + transform.forward, Quaternion.identity);
 				bullet.Speed = GameInput.ShootDirection() * bulletSpeed;
 			}
 		}
