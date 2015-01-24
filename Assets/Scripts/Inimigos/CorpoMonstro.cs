@@ -52,8 +52,8 @@ public class CorpoMonstro : BaseComponent {
     protected override void OnUpdate() {
         base.OnUpdate();
 
-        perna.Andar();
-        cabeca.Atacar();
+        //perna.Andar();
+        //cabeca.Atacar();
     }
 
     void FixedUpdate() {
