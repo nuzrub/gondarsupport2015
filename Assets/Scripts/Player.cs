@@ -2,19 +2,22 @@
 using System.Collections;
 
 public class Player : MonoBehaviour {
-	public float Speed = 60;
+    public float Speed = 60;
 
-	void Start () {
-	
-	}
+    void Start() {
 
-	void Update () {
-		Mover ();
-	}
+    }
 
-	private void Mover() {
-		Vector3 movement = GameInput.MoveDirection ();
+    void Update() {
+        Mover();
+    }
+    void FixedUpdate() {
+        rigidbody.velocity = Vector3.zero;
+    }
 
-		transform.Translate (movement * Speed * Time.deltaTime);
-	}
+    private void Mover() {
+        Vector3 movement = GameInput.MoveDirection();
+
+        transform.Translate(movement * Speed * Time.deltaTime);
+    }
 }
