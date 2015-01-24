@@ -50,7 +50,7 @@ public class GameSystem : MonoBehaviour {
 
     private CorpoMonstro CriarInimigo(int hp) {
         CorpoMonstro cm = (CorpoMonstro)GameObject.Instantiate(baseEnemy);
-        cm.criarMonstro(selecionadas[0], selecionadas[0], selecionadas[0], selecionadas[0], selecionadas[0]);
+        //cm.criarMonstro(selecionadas[0], selecionadas[0], selecionadas[0], selecionadas[0], selecionadas[0]);
         cm.HP_Max = hp;
 
 
