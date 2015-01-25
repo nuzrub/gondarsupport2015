@@ -13,8 +13,8 @@ public class CorpoMonstro : BaseComponent {
     public float HP_Current;
     public float attack;
     public float defense;
-    public float attack_speed;
     public float mov_peed;
+    public float cooldownModifier;
 
     public void montarMonstro(BaseCabeca cabeca, BaseBraco bracoEsquerdo, BaseBraco bracoDireito, BaseCosta costa, BasePerna pernas) {
 		cabeca.transform.parent = slotCabeca;
@@ -40,7 +40,7 @@ public class CorpoMonstro : BaseComponent {
         bclist[3] = bracoDireito;
         bclist[4] = bracoEsquerdo;
         bclist[5] = this;
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 6; i++) {
             bclist[i].corpo = this;
             bclist[i].costa = costa;
             bclist[i].perna = pernas;
@@ -48,7 +48,11 @@ public class CorpoMonstro : BaseComponent {
             bclist[i].braco2 = bracoEsquerdo;
         }
 
-        costa.Buffar();
+        cabeca.Buff();
+        braco1.Buff();
+        braco2.Buff();
+        costa.Buff();
+        perna.Buff();
 	}
 
     protected override void OnUpdate() {

@@ -3,7 +3,4 @@ using System.Collections;
 
 public class BaseCosta : BaseComponent {
 
-    public virtual void Buffar() { 
-    
-    }
 }

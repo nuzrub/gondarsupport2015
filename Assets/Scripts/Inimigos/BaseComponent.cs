@@ -24,4 +24,6 @@ public class BaseComponent : MonoBehaviour {
 
     protected virtual void OnStart() { }
     protected virtual void OnUpdate() { }
+
+    public virtual void Buff() { }
 }

@@ -12,6 +12,10 @@ public class GameSystem : MonoBehaviour {
     public int Quantidade_Inimigos_min = 3;
     public int Quantidade_Inimigos_max = 12;
     public int HP_Somado = 200;
+    public int Base_Attack = 10;
+    public int Base_Defense = 6;
+    public int Base_moveSpeed = 6;
+    public float Base_cooldownModifier = 1f;
 
     private BaseComponent[] selecionadas;
     private CorpoMonstro[] inimigos;
@@ -52,6 +56,11 @@ public class GameSystem : MonoBehaviour {
     private CorpoMonstro CriarInimigo(int hp) {
         CorpoMonstro cm = (CorpoMonstro)GameObject.Instantiate(baseEnemy);
         cm.HP_Max = hp;
+        cm.attack = Base_Attack;
+        cm.defense = Base_Defense;
+        cm.mov_peed = Base_moveSpeed;
+        cm.cooldownModifier = Base_cooldownModifier;
+
         cm.montarMonstro(
             (BaseCabeca)GameObject.Instantiate(selecionadas[0]),
             (BaseBraco)GameObject.Instantiate(selecionadas[1]),

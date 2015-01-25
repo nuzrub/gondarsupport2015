@@ -8,7 +8,7 @@ public class BaseBraco : BaseComponent {
 
     public void TentarAtirar() {
         if (Time.time > nextShoot) {
-            nextShoot = Time.time + cooldown;
+            nextShoot = Time.time + cooldown * corpo.cooldownModifier;
 
             Atirar();
         }
