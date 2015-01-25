@@ -21,6 +21,7 @@ public class DestroyOnCollision : MonoBehaviour {
             if (otherTag == "enemy") {
                 CorpoMonstro cm = other.GetComponent<CorpoMonstro>();
                 cm.TomarDano(damage);
+                print("asdasd");
                 destruir = true;
             }
         } else if (this.tag == "enemybullet") {
