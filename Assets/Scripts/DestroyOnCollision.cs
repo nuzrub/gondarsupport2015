@@ -26,7 +26,7 @@ public class DestroyOnCollision : MonoBehaviour {
         } else if (this.tag == "enemybullet") {
             if (otherTag == "Player") {
                 Player p = other.GetComponent<Player>();
-                // tirar hp
+                p.TakeDamage(damage);
                 destruir = true;
             }
         }
@@ -38,7 +38,7 @@ public class DestroyOnCollision : MonoBehaviour {
 
 
         if (destruir) {
-            Instantiate(explosionEffect);
+            Instantiate(explosionEffect, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
     }

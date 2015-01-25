@@ -10,7 +10,6 @@ public class LifeHud : MonoBehaviour {
 	}
 
     public void Start_TomarDano_Animation() {
-        print("iai");
 		animation.Play ();
 	}
 }
