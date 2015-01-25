@@ -42,6 +42,7 @@ public class CorpoMonstro : BaseComponent {
         bclist[5] = this;
         for (int i = 0; i < 6; i++) {
             bclist[i].corpo = this;
+            bclist[i].cabeca = cabeca;
             bclist[i].costa = costa;
             bclist[i].perna = pernas;
             bclist[i].braco1 = bracoDireito;
@@ -58,7 +59,7 @@ public class CorpoMonstro : BaseComponent {
     protected override void OnUpdate() {
         base.OnUpdate();
 
-        //perna.Andar();
+        perna.Andar();
         //cabeca.Atacar();
     }
 
