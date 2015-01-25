@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Perna_Roda : BasePerna {
+public class Perna_Hover : BasePerna {
 
     public override void Buff() {
         base.Buff();

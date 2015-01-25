@@ -39,7 +39,7 @@ public class GameSystem : MonoBehaviour {
         selecionadas[3] = costas[r];
 
         // pernas
-        r = Random.Range(0, pernas.Length - 1);
+        r = Random.Range(0, pernas.Length - 1); print(r);
         selecionadas[4] = pernas[r];
 
 
