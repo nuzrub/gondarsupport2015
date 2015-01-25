@@ -9,7 +9,7 @@ public class BasePerna : BaseComponent {
         corpo.transform.LookAt(player);
 
         if (Vector3.Distance(corpo.transform.position, player.position) >= distanciaDesejada) {
-            corpo.transform.Translate(corpo.transform.forward * corpo.mov_peed * Time.deltaTime);
+            corpo.transform.Translate(-corpo.transform.forward * corpo.mov_peed * Time.deltaTime);
         }
     }
 }

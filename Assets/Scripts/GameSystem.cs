@@ -4,19 +4,24 @@ using System.Collections;
 public class GameSystem : MonoBehaviour {
 
     public CorpoMonstro baseEnemy;
-    public Transform[] cabecas;
-    public Transform[] bracos;
-    public Transform[] costas;
-    public Transform[] pernas;
+    public BaseCabeca[] cabecas;
+    public BaseBraco[] bracos;
+    public BaseCosta[] costas;
+    public BasePerna[] pernas;
+    public Transform SpawnPoint;
     public int Quantidade_Inimigos_min = 3;
     public int Quantidade_Inimigos_max = 12;
     public int HP_Somado = 200;
+    public int Base_Attack = 10;
+    public int Base_Defense = 6;
+    public int Base_moveSpeed = 6;
+    public float Base_cooldownModifier = 1f;
 
-    private Transform[] selecionadas;
+    private BaseComponent[] selecionadas;
     private CorpoMonstro[] inimigos;
 
 	void Start () {
-        selecionadas = new Transform[5];
+        selecionadas = new BaseComponent[5];
         int r;
 
         // cabeça
@@ -34,7 +39,7 @@ public class GameSystem : MonoBehaviour {
         selecionadas[3] = costas[r];
 
         // pernas
-        r = Random.Range(0, pernas.Length - 1);
+        r = Random.Range(0, pernas.Length - 1); print(r);
         selecionadas[4] = pernas[r];
 
 
@@ -50,10 +55,21 @@ public class GameSystem : MonoBehaviour {
 
     private CorpoMonstro CriarInimigo(int hp) {
         CorpoMonstro cm = (CorpoMonstro)GameObject.Instantiate(baseEnemy);
-        //cm.criarMonstro(selecionadas[0], selecionadas[0], selecionadas[0], selecionadas[0], selecionadas[0]);
         cm.HP_Max = hp;
+        cm.attack = Base_Attack;
+        cm.defense = Base_Defense;
+        cm.mov_peed = Base_moveSpeed;
+        cm.cooldownModifier = Base_cooldownModifier;
+       
+        cm.montarMonstro(
+            (BaseCabeca)GameObject.Instantiate(selecionadas[0]),
+            (BaseBraco)GameObject.Instantiate(selecionadas[1]),
+            (BaseBraco)GameObject.Instantiate(selecionadas[2]),
+            (BaseCosta)GameObject.Instantiate(selecionadas[3]),
+            (BasePerna)GameObject.Instantiate(selecionadas[4]));
 
-
+        cm.transform.position = SpawnPoint.position;
+        cm.transform.parent = Temp.Objects;
         return cm;
     }
 }
