@@ -30,7 +30,7 @@ public class Player : MonoBehaviour {
         
 
         if (GameInput.Atirar1()) {
-            animation.CrossFade("Fire_Pistol_Cycle");
+            animation.CrossFade("Fire_Shotgun_Cycle");
             direction = GameInput.ShootDirection();
         }
 
