@@ -4,7 +4,7 @@ using System.Collections;
 public class DestroyOnCollision : MonoBehaviour {
 
     public GameObject explosionEffect;
-    public float damage;
+    public float damage = 4;
 
     void OnCollisionEnter(Collision collision) {
         codigo(collision.collider.tag);

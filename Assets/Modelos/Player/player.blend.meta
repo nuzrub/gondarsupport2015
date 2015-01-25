@@ -79,6 +79,7 @@ ModelImporter:
     7400024: Win_Cycle
     7400026: Win_Cycle_001
     9500000: //RootNode
+    11100000: //RootNode
     13700000: Cube_001
   materials:
     importMaterials: 1
@@ -131,6 +132,6 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 1
   additionalBone: 0
   userData: 
