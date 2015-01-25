@@ -4,10 +4,6 @@ using System.Collections;
 public class Player : MonoBehaviour {
     public float Speed = 6;
 
-    void Start() {
-
-    }
-
     void Update() {
         Mover();
     }
@@ -17,13 +13,19 @@ public class Player : MonoBehaviour {
 
     private void Mover() {
         Vector3 direction = GameInput.MoveDirection();
-        Vector3 translate;
-        Vector3 rotate;
+        Vector3 translate = Vector3.zero;
+        Vector3 rotate = Vector3.zero;
 
-
-        translate = direction * Speed * Time.deltaTime;
+        if (direction == Vector3.zero) {
+            animation.CrossFade("Defending_Cycle");
+        } else {
+            animation.CrossFade("Runing_Cycle");
+            translate = direction * Speed * Time.deltaTime;
+        }
+        
 
         if (GameInput.Atirar1()) {
+            animation.CrossFade("Fire_Pistol_Cycle");
             direction = GameInput.ShootDirection();
         }
 
