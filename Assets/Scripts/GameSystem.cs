@@ -79,4 +79,12 @@ public class GameSystem : MonoBehaviour {
         cm.transform.parent = Temp.Objects;
         return cm;
     }
+
+    public void OnInimigoMorreu() {
+        Inimigos_Vivos--;
+
+        if (Inimigos_Vivos == 0) {
+            // GameOver;
+        }
+    }
 }
