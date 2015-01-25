@@ -3,15 +3,14 @@ using System.Collections;
 
 public class DestroyMine : MonoBehaviour {
 
-	public float timerDestroyMine = 5f;
+    public float timerDestroyMine = 5f;
 
-	void Update()
-	{
-		timerDestroyMine -= Time.deltaTime;
+    void Update() {
+        timerDestroyMine -= Time.deltaTime;
 
-		if (timerDestroyMine < 0) {
-			Destroy (this.gameObject);
-			CMin.atual--;
-		}
-	}
+        if (timerDestroyMine < 0) {
+            Destroy(this.gameObject);
+            CMin.atual--;
+        }
+    }
 }
