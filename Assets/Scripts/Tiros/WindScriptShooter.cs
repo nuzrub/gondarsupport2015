@@ -18,6 +18,7 @@ public class WindScriptShooter : BaseShooter {
         rigidbody.useGravity = false;
         rigidbody.velocity = empty.transform.forward * speed;
 
+        sphere.tag = "playerbullet";
         CriarEfeito(sphere.transform);
         Destroy(sphere, timeToDestroy);
     }

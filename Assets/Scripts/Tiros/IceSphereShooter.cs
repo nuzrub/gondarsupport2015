@@ -15,6 +15,7 @@ public class IceSphereShooter : BaseShooter {
 
         Rigidbody rigidbody = sphere.AddComponent<Rigidbody>();
 
+        sphere.tag = "playerbullet";
         rigidbody.useGravity = false;
         rigidbody.velocity = empty.transform.forward * speed;
 

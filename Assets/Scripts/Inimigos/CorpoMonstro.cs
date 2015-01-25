@@ -9,6 +9,7 @@ public class CorpoMonstro : BaseComponent {
 	public Transform slotCosta;
 	public Transform slotPernas;
 
+    public GameObject onDieEffect;
     public float HP_Max;
     public float HP_Current;
     public float attack;
@@ -16,6 +17,14 @@ public class CorpoMonstro : BaseComponent {
     public float mov_peed;
     public float cooldownModifier;
 
+    public void TomarDano(float damage) {
+        HP_Current -= damage;
+
+        if (HP_Current <= 0) {
+            Instantiate(onDieEffect, transform.position, transform.rotation);
+            GameObject.Destroy(this.gameObject);
+        }
+    }
     public void montarMonstro(BaseCabeca cabeca, BaseBraco bracoEsquerdo, BaseBraco bracoDireito, BaseCosta costa, BasePerna pernas) {
 		cabeca.transform.parent = slotCabeca;
         cabeca.transform.localPosition = Vector3.zero;

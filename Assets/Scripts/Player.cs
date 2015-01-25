@@ -2,9 +2,12 @@
 using System.Collections;
 
 public class Player : MonoBehaviour {
+    public LifeHud hud;
+    public GameObject OnDieEffect;
     public float HP_Max = 100;
     public float HP_Curr;
     public float Speed = 6;
+
 
     void Start() {
         HP_Curr = HP_Max;
@@ -14,6 +17,16 @@ public class Player : MonoBehaviour {
     }
     void FixedUpdate() {
         rigidbody.velocity = Vector3.zero;
+    }
+
+    public void TakeDamage(float damage) {
+        HP_Curr -= damage;
+
+        hud.Start_TomarDano_Animation();
+        if (HP_Curr <= 0) {
+            Instantiate(OnDieEffect, transform.position, transform.rotation);
+            GameObject.Destroy(this.gameObject);
+        }
     }
 
     private void Mover() {
