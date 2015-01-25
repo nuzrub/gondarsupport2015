@@ -3,6 +3,7 @@ using System.Collections;
 
 public class GameSystem : MonoBehaviour {
 
+    public static GameSystem Instance;
     public CorpoMonstro baseEnemy;
     public BaseCabeca[] cabecas;
     public BaseBraco[] bracos;
@@ -17,9 +18,14 @@ public class GameSystem : MonoBehaviour {
     public int Base_moveSpeed = 6;
     public float Base_cooldownModifier = 1f;
 
+    public int Inimigos_Vivos;
+
     private BaseComponent[] selecionadas;
     private CorpoMonstro[] inimigos;
 
+    void Awake() {
+        GameSystem.Instance = this;
+    }
 	void Start () {
         selecionadas = new BaseComponent[5];
         int r;
@@ -45,6 +51,7 @@ public class GameSystem : MonoBehaviour {
 
 
         int qinimigos = Random.Range(Quantidade_Inimigos_min, Quantidade_Inimigos_max);
+        Inimigos_Vivos = qinimigos;
         int hp = HP_Somado / qinimigos;
         inimigos = new CorpoMonstro[qinimigos];
 
