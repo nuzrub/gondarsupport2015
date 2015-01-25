@@ -26,6 +26,7 @@ public class Player : MonoBehaviour {
         if (HP_Curr <= 0) {
             Instantiate(OnDieEffect, transform.position, transform.rotation);
             GameObject.Destroy(this.gameObject);
+			AudioManager.PlayBGM("epicSocoreLose");
         }
     }
 

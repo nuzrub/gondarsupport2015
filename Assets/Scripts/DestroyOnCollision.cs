@@ -40,6 +40,7 @@ public class DestroyOnCollision : MonoBehaviour {
         if (destruir) {
             Instantiate(explosionEffect, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
+			AudioManager.PlaySFX("sfx_explosion", this.transform.position);
         }
     }
 }
