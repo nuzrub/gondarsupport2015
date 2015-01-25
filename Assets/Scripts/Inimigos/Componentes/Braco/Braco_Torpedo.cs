@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Braco_Wind : BaseBraco {
+public class Braco_Torpedo : BaseBraco {
 
     public override void Atirar() {
         base.Atirar();
