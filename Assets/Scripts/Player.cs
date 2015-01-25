@@ -20,6 +20,7 @@ public class Player : MonoBehaviour {
         Vector3 translate;
         Vector3 rotate;
 
+
         translate = direction * Speed * Time.deltaTime;
 
         if (GameInput.Atirar1()) {
@@ -36,5 +37,6 @@ public class Player : MonoBehaviour {
 
         transform.Translate(translate, Space.World);
         transform.Rotate(rotate, Space.Self);
+        print(translate);
     }
 }

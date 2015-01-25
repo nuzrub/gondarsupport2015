@@ -19,7 +19,6 @@ public class FrogScriptShooter : MonoBehaviour {
 			GameObject sphere = Instantiate(projectile, new Vector3(0, 0 , 0), Quaternion.identity) as GameObject;
 			
 			//sphere.renderer.enabled = false;
-			sphere.transform.localScale += new Vector3(1, 1, 1);
 			sphere.transform.position = empty.transform.position;
 			sphere.transform.rotation = empty.transform.rotation;
 			
