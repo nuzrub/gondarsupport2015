@@ -11,6 +11,7 @@ public class Braco_Missil : BaseBraco {
         //sphere.renderer.enabled = false;
         sphere.transform.position = empty.transform.position;
         sphere.transform.rotation = empty.transform.rotation;
+        sphere.transform.eulerAngles += new Vector3(-90, 0, 0);
         sphere.transform.parent = Temp.Projectiles;
 
         Rigidbody rigidbody = sphere.AddComponent<Rigidbody>();

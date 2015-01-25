@@ -2,7 +2,17 @@ fileFormatVersion: 2
 guid: 95b473732e5a8c941aa36cad94690ff3
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - player: {instanceID: 0}
+  - corpo: {instanceID: 0}
+  - cabeca: {instanceID: 0}
+  - costa: {instanceID: 0}
+  - braco1: {instanceID: 0}
+  - braco2: {instanceID: 0}
+  - perna: {instanceID: 0}
+  - empty: {instanceID: 0}
+  - projectile: {instanceID: 0}
+  - efeito: {fileID: 100004, guid: 5300a49404be1604d978ca5e63269cc1, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

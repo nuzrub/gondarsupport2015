@@ -10,6 +10,7 @@ public class Braco_Torpedo : BaseBraco {
 
         //sphere.renderer.enabled = false;
         sphere.transform.position = empty.transform.position;
+        sphere.transform.eulerAngles += new Vector3(-90, 0, 0);
         sphere.transform.rotation = empty.transform.rotation;
         sphere.transform.parent = Temp.Projectiles;
 
