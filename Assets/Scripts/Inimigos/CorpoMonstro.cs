@@ -22,9 +22,13 @@ public class CorpoMonstro : BaseComponent {
 
         bracoDireito.transform.parent = slotBracoDireito;
         bracoDireito.transform.localPosition = Vector3.zero;
+        bracoDireito.transform.eulerAngles = new Vector3(-90, 0, 0);
+        bracoDireito.transform.localScale = new Vector3(6, 6, 6);
 
         bracoEsquerdo.transform.parent = slotBracoEsquerdo;
         bracoEsquerdo.transform.localPosition = Vector3.zero;
+        bracoEsquerdo.transform.eulerAngles = new Vector3(-90, 0, 0);
+        bracoEsquerdo.transform.localScale = new Vector3(6, 6, 6);
 
         costa.transform.parent = slotCosta;
         costa.transform.localPosition = Vector3.zero;
