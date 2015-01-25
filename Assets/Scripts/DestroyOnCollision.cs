@@ -4,10 +4,10 @@ using System.Collections;
 public class DestroyOnCollision : MonoBehaviour {
 
     public GameObject explosionEffect;
-    public float damage;
+    public float damage = 4;
 
     void OnCollisionEnter(Collision collision) {
-        codigo(collision.other.tag);
+        codigo(collision.collider.tag);
     }
     void OnTriggerEnter(Collider other) {
         codigo(other.tag);
@@ -16,10 +16,12 @@ public class DestroyOnCollision : MonoBehaviour {
     void codigo(string otherTag) {
         if (tag == "Player") {
             // tirar hp
+
+            Instantiate(explosionEffect);
+            Destroy(this.gameObject);
         } else if (tag == "cenario") {
-            return;
-        } else {
-            return;
+            Instantiate(explosionEffect);
+            Destroy(this.gameObject);
         }
     }
 }
