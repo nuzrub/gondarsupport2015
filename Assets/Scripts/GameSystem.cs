@@ -67,6 +67,7 @@ public class GameSystem : MonoBehaviour {
         cm.defense = Base_Defense;
         cm.mov_peed = Base_moveSpeed;
         cm.cooldownModifier = Base_cooldownModifier;
+        cm.tag = "enemy";
        
         cm.montarMonstro(
             (BaseCabeca)GameObject.Instantiate(selecionadas[0]),
