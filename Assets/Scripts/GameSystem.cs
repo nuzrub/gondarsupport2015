@@ -68,7 +68,7 @@ public class GameSystem : MonoBehaviour {
             (BaseCosta)GameObject.Instantiate(selecionadas[3]),
             (BasePerna)GameObject.Instantiate(selecionadas[4]));
 
-        cm.transform.position = SpawnPoint.position;
+        cm.transform.position = SpawnPoint.position + new Vector3(Random.Range(-5f, 5f), 0, 0);
         cm.transform.parent = Temp.Objects;
         return cm;
     }
