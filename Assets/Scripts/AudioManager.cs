@@ -39,6 +39,7 @@ public class AudioManager : MonoBehaviour {
     }
 
 
+
     #region BGM
 
     public static void PlayBGM(string name) {
