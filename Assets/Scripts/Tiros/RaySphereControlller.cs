@@ -10,15 +10,8 @@ public class RaySphereControlller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        this.gameObject.transform.localScale += new Vector3(0.001f, 0.001f, 0.005f);
 
 	}
 
-	void OnCollisionEnter(Collision collision)
-	{
-		if(collision.gameObject.tag.Equals("Respawn"))
-		{
-			Debug.Log ("Bateu no inimigo");
-		}
-
-	}
 }
