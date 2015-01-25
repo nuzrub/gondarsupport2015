@@ -10,8 +10,10 @@ public class RaySphereControlller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        this.gameObject.transform.localScale += new Vector3(0.001f, 0.001f, 0.005f);
 
+        this.gameObject.transform.localScale += new Vector3(0.001f, 0.001f, 0.005f);
+        // particleEmitter.Emit();
+        
 	}
 
 }
