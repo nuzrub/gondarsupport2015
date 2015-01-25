@@ -17,7 +17,8 @@ public class RaySphereShooter : BaseShooter {
 		
 		rigidbody.useGravity = false;
 		rigidbody.velocity = empty.transform.forward * speed;
-		
+
+        CriarEfeito(sphere.transform);
 		Destroy(sphere, timeToDestroy);
 	}
 }

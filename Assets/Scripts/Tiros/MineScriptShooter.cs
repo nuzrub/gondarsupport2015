@@ -17,6 +17,7 @@ public class MineScriptShooter : BaseShooter {
 
             Rigidbody rigidbody = sphere.AddComponent<Rigidbody>();
 
+            CriarEfeito(sphere.transform);
             rigidbody.useGravity = true;
             CMin.atual++;
         }

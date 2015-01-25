@@ -2,8 +2,13 @@
 using System.Collections;
 
 public class Player : MonoBehaviour {
+    public float HP_Max = 100;
+    public float HP_Curr;
     public float Speed = 6;
 
+    void Start() {
+        HP_Curr = HP_Max;
+    }
     void Update() {
         Mover();
     }

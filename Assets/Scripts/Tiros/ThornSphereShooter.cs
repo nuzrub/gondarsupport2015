@@ -47,6 +47,11 @@ public class ThornSphereShooter : BaseShooter {
         rigidbody5.useGravity = false;
         rigidbody5.velocity = empty.transform.forward * (speed + Random.Range(10.0F, 30F));
 
+        CriarEfeito(sphere1.transform);
+        CriarEfeito(sphere2.transform);
+        CriarEfeito(sphere3.transform);
+        CriarEfeito(sphere4.transform);
+        CriarEfeito(sphere5.transform);
 
         Destroy(sphere1, timeToDestroy);
         Destroy(sphere2, timeToDestroy);

@@ -16,11 +16,15 @@ public class BaseShooter : MonoBehaviour {
             if (Time.time > nextShoot) {
                 nextShoot = Time.time + cooldown;
 
-                if (efeito != null) {
-                    Instantiate(efeito, empty.transform.position, empty.transform.rotation);
-                }
                 Atirar();
             }
+        }
+    }
+
+    protected void CriarEfeito(Transform esfera) {
+        if (efeito != null) {
+            GameObject go = (GameObject)Instantiate(efeito, esfera.position, esfera.rotation);
+            go.transform.parent = esfera;
         }
     }
 
