@@ -10,7 +10,7 @@ public class WindSphereController : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
-		transform.position += transform.right * Mathf.Sin(seno*20) * (seno*5) ;
-		seno += Time.deltaTime;
+		transform.position += transform.right * 3.4f*(Mathf.Sin(seno));
+		seno += Time.deltaTime * 8 + 1;
 	}
 }

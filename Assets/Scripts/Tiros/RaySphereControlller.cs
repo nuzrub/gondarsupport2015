@@ -13,8 +13,12 @@ public class RaySphereControlller : MonoBehaviour {
 
 	}
 
-	void OnCollisionEnter()
+	void OnCollisionEnter(Collision collision)
 	{
+		if(collision.gameObject.tag.Equals("Respawn"))
+		{
+			Debug.Log ("Bateu no inimigo");
+		}
 
 	}
 }
