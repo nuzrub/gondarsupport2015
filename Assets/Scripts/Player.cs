@@ -36,6 +36,5 @@ public class Player : MonoBehaviour {
 
         transform.Translate(translate, Space.World);
         transform.Rotate(rotate, Space.Self);
-        print(translate);
     }
 }

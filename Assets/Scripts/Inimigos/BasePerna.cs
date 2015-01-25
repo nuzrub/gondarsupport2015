@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class BasePerna : BaseComponent {
-    public float distanciaDesejada = 6f;
+    public float distanciaDesejada = 20f;
 
 
     public virtual void Andar() {

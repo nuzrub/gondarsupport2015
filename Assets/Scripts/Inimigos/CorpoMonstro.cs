@@ -47,6 +47,8 @@ public class CorpoMonstro : BaseComponent {
             bclist[i].braco1 = bracoDireito;
             bclist[i].braco2 = bracoEsquerdo;
         }
+
+        costa.Buffar();
 	}
 
     protected override void OnUpdate() {
