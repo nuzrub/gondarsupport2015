@@ -51,6 +51,17 @@ public class Braco_Fogo : BaseBraco {
         rigidbody5.useGravity = false;
         rigidbody5.velocity = empty.transform.forward * (bulletSpeed + Random.Range(10.0F, 30F));
 
+        CriarEfeito(sphere1.transform);
+        CriarEfeito(sphere2.transform);
+        CriarEfeito(sphere3.transform);
+        CriarEfeito(sphere4.transform);
+        CriarEfeito(sphere5.transform);
+
+        sphere1.tag = "enemybullet";
+        sphere2.tag = "enemybullet";
+        sphere3.tag = "enemybullet";
+        sphere4.tag = "enemybullet";
+        sphere5.tag = "enemybullet";
 
         Destroy(sphere1, bulletLifetime);
         Destroy(sphere2, bulletLifetime);

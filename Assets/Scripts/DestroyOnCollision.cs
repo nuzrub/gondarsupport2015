@@ -6,21 +6,39 @@ public class DestroyOnCollision : MonoBehaviour {
     public GameObject explosionEffect;
     public float damage = 4;
 
+
     void OnCollisionEnter(Collision collision) {
-        codigo(collision.collider.tag);
+        codigo(collision.collider.tag, collision.gameObject);
     }
     void OnTriggerEnter(Collider other) {
-        codigo(other.tag);
+        codigo(other.tag, other.gameObject);
     }
 
-    void codigo(string otherTag) {
-        if (tag == "Player") {
-            // tirar hp
 
-            Instantiate(explosionEffect);
-            Destroy(this.gameObject);
-        } else if (tag == "cenario") {
-            Instantiate(explosionEffect);
+    void codigo(string otherTag, GameObject other) {
+        bool destruir = false;
+        if (this.tag == "playerbullet") {
+            if (otherTag == "enemy") {
+                CorpoMonstro cm = other.GetComponent<CorpoMonstro>();
+                cm.TomarDano(damage);
+                destruir = true;
+            }
+        } else if (this.tag == "enemybullet") {
+            if (otherTag == "Player") {
+                Player p = other.GetComponent<Player>();
+                p.TakeDamage(damage);
+                destruir = true;
+            }
+        }
+        
+        
+        if (tag == "cenario") {
+            destruir = true;
+        }
+
+
+        if (destruir) {
+            Instantiate(explosionEffect, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
     }

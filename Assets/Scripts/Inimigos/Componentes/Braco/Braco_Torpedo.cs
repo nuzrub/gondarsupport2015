@@ -19,6 +19,8 @@ public class Braco_Torpedo : BaseBraco {
         rigidbody.useGravity = false;
         rigidbody.velocity = empty.transform.forward * bulletSpeed;
 
+        sphere.tag = "enemybullet";
+        CriarEfeito(sphere.transform);
         Destroy(sphere, bulletLifetime);
     }
 }
