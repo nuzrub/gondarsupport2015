@@ -53,6 +53,12 @@ public class ThornSphereShooter : BaseShooter {
         CriarEfeito(sphere4.transform);
         CriarEfeito(sphere5.transform);
 
+        sphere1.tag = "playerbullet";
+        sphere2.tag = "playerbullet";
+        sphere3.tag = "playerbullet";
+        sphere4.tag = "playerbullet";
+        sphere5.tag = "playerbullet";
+
         Destroy(sphere1, timeToDestroy);
         Destroy(sphere2, timeToDestroy);
         Destroy(sphere3, timeToDestroy);

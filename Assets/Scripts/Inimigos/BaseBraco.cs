@@ -21,6 +21,14 @@ public class BaseBraco : BaseComponent {
             Atirar();
         }
     }
+
+    protected void CriarEfeito(Transform esfera) {
+        if (efeito != null) {
+            GameObject go = (GameObject)Instantiate(efeito, esfera.position, esfera.rotation);
+            go.transform.parent = esfera;
+        }
+    }
+
     public virtual void Atirar() {
 
     }
