@@ -21,7 +21,7 @@ public class EventHandlerWeapon : MonoBehaviour, IPointerEnterHandler, ISelectHa
 	public void OnPointerEnter(PointerEventData eventData) {
 		weaponTitleSlot.text = weaponTitle.text;
 		weaponTextSlot.text = weaponText.text;
-		weaponCardSlot.color = weaponCard.color;
+		weaponCardSlot.sprite = weaponCard.sprite;
 	}
 	
 	public void OnSelect(BaseEventData eventData) {
