@@ -23,6 +23,7 @@ public class CorpoMonstro : BaseComponent {
         if (HP_Current <= 0) {
             Instantiate(onDieEffect, transform.position, transform.rotation);
             GameObject.Destroy(this.gameObject);
+            GameSystem.Instance.OnInimigoMorreu();
         }
     }
     public void montarMonstro(BaseCabeca cabeca, BaseBraco bracoEsquerdo, BaseBraco bracoDireito, BaseCosta costa, BasePerna pernas) {

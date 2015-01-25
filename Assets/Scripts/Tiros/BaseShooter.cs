@@ -5,6 +5,7 @@ public class BaseShooter : MonoBehaviour {
     public GameObject empty;
     public GameObject projectile;
     public GameObject efeito;
+    public string sfx_name;
     public float timeToDestroy;
     public float speed = 1f;
     public float cooldown = 0.3f;
@@ -16,6 +17,9 @@ public class BaseShooter : MonoBehaviour {
             if (Time.time > nextShoot) {
                 nextShoot = Time.time + cooldown;
 
+                if (sfx_name != "") {
+                    AudioManager.PlaySFX(sfx_name, transform.position);
+                }
                 Atirar();
             }
         }

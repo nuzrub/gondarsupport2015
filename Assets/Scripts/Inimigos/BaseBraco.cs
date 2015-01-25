@@ -6,6 +6,7 @@ public class BaseBraco : BaseComponent {
     public Transform empty;
     public GameObject projectile;
     public GameObject efeito;
+    public string sfx_name;
     public float bulletSpeed = 10f;
     public float bulletLifetime = 3f;
     public float cooldown = 0.6f;
@@ -17,6 +18,9 @@ public class BaseBraco : BaseComponent {
 
             if (efeito != null) {
                 Instantiate(efeito, empty.transform.position, empty.transform.rotation);
+            }
+            if (sfx_name != "") {
+                AudioManager.PlaySFX(sfx_name, transform.position);
             }
             Atirar();
         }
