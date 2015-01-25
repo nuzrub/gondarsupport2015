@@ -60,7 +60,7 @@ public class CorpoMonstro : BaseComponent {
         base.OnUpdate();
 
         perna.Andar();
-        //cabeca.Atacar();
+        cabeca.Atacar();
     }
 
     void FixedUpdate() {

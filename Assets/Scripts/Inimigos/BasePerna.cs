@@ -6,6 +6,7 @@ public class BasePerna : BaseComponent {
 
 
     public virtual void Andar() {
+        corpo.transform.position = new Vector3(corpo.transform.position.x, player.transform.position.y, corpo.transform.position.z);
         corpo.transform.LookAt(player);
 
         if (Vector3.Distance(corpo.transform.position, player.position) >= distanciaDesejada) {
