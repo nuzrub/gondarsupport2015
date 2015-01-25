@@ -12,7 +12,7 @@ public class DestroyMine : MonoBehaviour {
         if (timerDestroyMine < 0) {
             Destroy(this.gameObject);
             CMin.atual--;
-            Instantiate(efeito, this.gameObject.transform.position, Quaternion.identity);
+            Instantiate(efeito, this.gameObject.transform.position, this.gameObject.transform.rotation);
         }
     }
 }
