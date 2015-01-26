@@ -11,6 +11,31 @@ public class Player : MonoBehaviour {
 
     void Start() {
         HP_Curr = HP_Max;
+
+        switch (EventHandlerWeapon.selectedWeapon) {
+            case "FireWeapon":
+                (this.GetComponent<FireScriptShooter>()).enabled = true;
+                break;
+            case "IceWeapon":
+                (this.GetComponent<IceSphereShooter>()).enabled = true;
+                break;
+            case "MineWeapon":
+                break;
+            case "SpikeWeapon":
+                (this.GetComponent<ThornSphereShooter>()).enabled = true;
+                break;
+            case "VenomWeapon":
+                (this.GetComponent<FrogScriptShooter>()).enabled = true;
+                break;
+            case "TornadoWeapon":
+                (this.GetComponent<WindScriptShooter>()).enabled = true;
+                break;
+
+            default:
+                print(EventHandlerWeapon.selectedWeapon);
+                (this.GetComponent<FireScriptShooter>()).enabled = true;
+                break;
+        }
     }
     void Update() {
         Mover();
