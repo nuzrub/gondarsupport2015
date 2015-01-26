@@ -10,8 +10,8 @@ public class Braco_Torpedo : BaseBraco {
 
         //sphere.renderer.enabled = false;
         sphere.transform.position = empty.transform.position;
-        sphere.transform.eulerAngles += new Vector3(-90, 0, 0);
         sphere.transform.rotation = empty.transform.rotation;
+        sphere.transform.eulerAngles += new Vector3(-90, 0, 0);
         sphere.transform.parent = Temp.Projectiles;
 
 
@@ -19,6 +19,7 @@ public class Braco_Torpedo : BaseBraco {
 
         rigidbody.useGravity = false;
         rigidbody.velocity = empty.transform.forward * bulletSpeed;
+        rigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous;
 
         sphere.tag = "enemybullet";
         CriarEfeito(sphere.transform);

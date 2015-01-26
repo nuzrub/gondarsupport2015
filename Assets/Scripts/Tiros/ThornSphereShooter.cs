@@ -12,7 +12,7 @@ public class ThornSphereShooter : BaseShooter {
         //GameObject sphere4 = Instantiate(projectile, new Vector3(Random.Range(-3.0F, 5.0F), empty.transform.position.y, Random.Range(-3.0F, 5.0F)), Quaternion.identity) as GameObject;
         //GameObject sphere5 = Instantiate(projectile, new Vector3(Random.Range(-3.0F, 5.0F), empty.transform.position.y, Random.Range(-3.0F, 5.0F)), Quaternion.identity) as GameObject;
 
-        //sphere.renderer.enabled = false;
+        sphere1.renderer.enabled = false;
 
         sphere1.transform.position = empty.transform.position;
         sphere1.transform.rotation = empty.transform.rotation;
@@ -31,6 +31,7 @@ public class ThornSphereShooter : BaseShooter {
 
 
         Rigidbody rigidbody1 = sphere1.AddComponent<Rigidbody>();
+        rigidbody1.collisionDetectionMode = CollisionDetectionMode.Continuous;
         //Rigidbody rigidbody2 = sphere2.AddComponent<Rigidbody>();
         //Rigidbody rigidbody3 = sphere3.AddComponent<Rigidbody>();
         //Rigidbody rigidbody4 = sphere4.AddComponent<Rigidbody>();

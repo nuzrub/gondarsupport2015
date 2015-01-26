@@ -12,6 +12,9 @@ public class GameCamera : MonoBehaviour {
 	}
 
 	void Update () {
+        if (player == null) {
+            return;
+        }
 		transform.position = player.position + distanceToPlayer;
 	}
 }

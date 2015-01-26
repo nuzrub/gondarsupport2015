@@ -12,7 +12,11 @@ public class Braco_Fogo : BaseBraco {
         GameObject sphere4 = Instantiate(projectile, new Vector3(Random.Range(-3.0F, 5.0F), empty.transform.position.y, Random.Range(-3.0F, 5.0F)), Quaternion.identity) as GameObject;
         GameObject sphere5 = Instantiate(projectile, new Vector3(Random.Range(-3.0F, 5.0F), empty.transform.position.y, Random.Range(-3.0F, 5.0F)), Quaternion.identity) as GameObject;
 
-        //sphere.renderer.enabled = false;
+        sphere1.renderer.enabled = false;
+        sphere2.renderer.enabled = false;
+        sphere3.renderer.enabled = false;
+        sphere4.renderer.enabled = false;
+        sphere5.renderer.enabled = false;
 
         sphere1.transform.position = empty.transform.position;
         sphere1.transform.rotation = empty.transform.rotation;
@@ -42,14 +46,19 @@ public class Braco_Fogo : BaseBraco {
 
         rigidbody1.useGravity = false;
         rigidbody1.velocity = empty.transform.forward * (bulletSpeed + Random.Range(10.0F, 30F));
+        rigidbody1.collisionDetectionMode = CollisionDetectionMode.Continuous;
         rigidbody2.useGravity = false;
         rigidbody2.velocity = empty.transform.forward * (bulletSpeed + Random.Range(10.0F, 30F));
+        rigidbody2.collisionDetectionMode = CollisionDetectionMode.Continuous;
         rigidbody3.useGravity = false;
         rigidbody3.velocity = empty.transform.forward * (bulletSpeed + Random.Range(10.0F, 30F));
+        rigidbody3.collisionDetectionMode = CollisionDetectionMode.Continuous;
         rigidbody4.useGravity = false;
         rigidbody4.velocity = empty.transform.forward * (bulletSpeed + Random.Range(10.0F, 30F));
+        rigidbody4.collisionDetectionMode = CollisionDetectionMode.Continuous;
         rigidbody5.useGravity = false;
         rigidbody5.velocity = empty.transform.forward * (bulletSpeed + Random.Range(10.0F, 30F));
+        rigidbody5.collisionDetectionMode = CollisionDetectionMode.Continuous;
 
         CriarEfeito(sphere1.transform);
         CriarEfeito(sphere2.transform);

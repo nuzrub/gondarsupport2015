@@ -5,7 +5,7 @@ public class LittleThornCreator : BaseShooter
 {
 
     public float timerDestroySphere;
-    public GameObject efeito;
+    public GameObject efeito2;
     public GameObject littleThorn;
 
 	void Start () {

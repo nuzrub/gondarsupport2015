@@ -8,11 +8,12 @@ public class FrogScriptShooter : BaseShooter {
 
         GameObject sphere = Instantiate(projectile, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
 
-        //sphere.renderer.enabled = false;
+        sphere.renderer.enabled = false;
         sphere.transform.position = empty.transform.position;
         sphere.transform.rotation = empty.transform.rotation;
 
         Rigidbody rigidbody = sphere.AddComponent<Rigidbody>();
+        rigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous;
 
         sphere.tag = "playerbullet";
         rigidbody.useGravity = false;

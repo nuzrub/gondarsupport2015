@@ -8,7 +8,7 @@ public class WindScriptShooter : BaseShooter {
 
         GameObject sphere = Instantiate(projectile, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
 
-        //sphere.renderer.enabled = false;
+        sphere.renderer.enabled = false;
         sphere.transform.position = empty.transform.position;
         sphere.transform.rotation = empty.transform.rotation;
 
@@ -16,6 +16,7 @@ public class WindScriptShooter : BaseShooter {
         Rigidbody rigidbody = sphere.AddComponent<Rigidbody>();
 
         rigidbody.useGravity = false;
+        rigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous;
         rigidbody.velocity = empty.transform.forward * speed;
 
         sphere.tag = "playerbullet";

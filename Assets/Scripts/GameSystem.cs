@@ -85,7 +85,7 @@ public class GameSystem : MonoBehaviour {
         Inimigos_Vivos--;
 
         if (Inimigos_Vivos == 0) {
-            // GameOver;
+            print("Win");
         }
     }
 }

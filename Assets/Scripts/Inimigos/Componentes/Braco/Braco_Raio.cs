@@ -17,6 +17,7 @@ public class Braco_Raio : BaseBraco {
 
         rigidbody.useGravity = false;
         rigidbody.velocity = empty.transform.forward * bulletSpeed;
+        rigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous;
 
         sphere.tag = "enemybullet";
         CriarEfeito(sphere.transform);

@@ -22,11 +22,13 @@ public class Player : MonoBehaviour {
     public void TakeDamage(float damage) {
         HP_Curr -= damage;
 
-        hud.Start_TomarDano_Animation();
+        //hud.Start_TomarDano_Animation();
         if (HP_Curr <= 0) {
             Instantiate(OnDieEffect, transform.position, transform.rotation);
             GameObject.Destroy(this.gameObject);
 			AudioManager.PlayBGM("epicSocoreLose");
+            GameCamera gc = Camera.main.GetComponent<GameCamera>();
+            gc.player = null;
         }
     }
 

@@ -13,13 +13,16 @@ public class BaseComponent : MonoBehaviour {
     public BasePerna perna;
 
 	void Start () {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-
         OnStart();
 	}
 
 	void Update () {
-        OnUpdate();
+        GameObject p = GameObject.FindGameObjectWithTag("Player");
+
+        if (p != null) {
+            player = p.transform;
+            OnUpdate();
+        }
 	}
 
     protected virtual void OnStart() { }
